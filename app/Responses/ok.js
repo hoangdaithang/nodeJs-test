@@ -10,7 +10,7 @@
  *    {string, object} message
  */
 
-module.exports = (res, options = {}) => {
+module.exports = (res, options = {}, statusCode = 200) => {
   const {
     data,
     total,
@@ -22,7 +22,7 @@ module.exports = (res, options = {}) => {
   res.status(200)
 
   const response = {
-    status: 200,
+    status: statusCode,
     data: data || null,
     message: message || 'Success',
     total: total,
