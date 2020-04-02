@@ -22,7 +22,10 @@ module.exports = {
         error: 'registerFalse'
       }
     } catch (e) {
-      return e.message
+      return {
+        status: false,
+        error: e.message
+      }
     }
   },
   login: async (req) => {
@@ -41,7 +44,10 @@ module.exports = {
         user: informationUser
       }
     } catch (e) {
-      return e.message
+      return {
+        status: false,
+        error: e.message
+      }
     }
   }
 }

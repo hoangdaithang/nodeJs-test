@@ -3,7 +3,7 @@ const { errorsIndex } = require('../../Utils/errorsFunc')
 const Joi = require('joi')
 
 module.exports = {
-  register: async (req, res, next) => {
+  register: (req, res, next) => {
     const { email, password, confirmPass, name } = req.body
     if (!email) return _error(res, { message: errorsIndex(req, 'emailNull') }, {}, 400)
     if (!password) return _error(res, { message: errorsIndex(req, 'passwordNull') }, {})
@@ -21,10 +21,18 @@ module.exports = {
       return next()
     })
   },
-  login: async (req, res, next) => {
+  login: (req, res, next) => {
     const { name, password } = req.body
     if (!password) return _error(res, { message: errorsIndex(req, 'passwordNull') }, {})
     if (!name) return _error(res, { message: errorsIndex(req, 'nameNull') })
+    return next()
+  },
+  event: (req, res, next) => {
+    const { name, startDate, dueDate } = req.body
+    if (!startDate) return _error(res, { message: errorsIndex(req, 'startDateNull') }, {})
+    if (!dueDate) return _error(res, { message: errorsIndex(req, 'dueDatedNull') }, {})
+    if (!name) return _error(res, { message: errorsIndex(req, 'nameEventNull') }, {})
+
     return next()
   }
 }

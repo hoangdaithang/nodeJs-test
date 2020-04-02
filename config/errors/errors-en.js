@@ -50,6 +50,38 @@ const errors = {
   nameDoesNotExits: {
     message: 'Your name is not registered yet.',
     code: 4013
+  },
+  tokenNotFormat: {
+    message: 'Token is required.',
+    code: 4014
+  },
+  tokenFalse: {
+    message: 'token false',
+    code: 4015
+  },
+  tokenDoesNotGetProfile: {
+    message: 'Login failed, please try again',
+    code: 4016
+  },
+  startDateNull: {
+    message: 'Start date is required',
+    code: 4017
+  },
+  dueDateNull: {
+    message: 'Due date is required',
+    code: 4018
+  },
+  nameEventNull: {
+    message: 'Your name event is required',
+    code: 4019
+  },
+  addEventFalse: {
+    message: 'Add new event false.',
+    code: 4020
+  },
+  eventDoesNotExits: {
+    message: 'Event does not exits',
+    code: 4021
   }
 }
 module.exports = {

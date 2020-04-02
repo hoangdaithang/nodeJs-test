@@ -12,9 +12,9 @@ const errorsIndex = (req, errorCode) => {
     let messageErrors
     const languagesClient = req && req.headers && req.headers[string.acceptLanguages] ? req.headers[string.acceptLanguages] : 'en'
     if (languagesClient === 'vi') {
-      messageErrors = _errorVi.errors[string.errorCode].message
+      messageErrors = _errorVi.errors[string.errorCode] ? _errorVi.errors[string.errorCode].message : errorCode
     } else {
-      messageErrors = _errorEn.errors[string.errorCode].message
+      messageErrors = _errorEn.errors[string.errorCode] ? _errorEn.errors[string.errorCode].message : errorCode
     }
     return messageErrors
   } catch (e) {
