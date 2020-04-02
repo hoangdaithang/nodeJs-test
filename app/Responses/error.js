@@ -11,7 +11,7 @@
  * @param {array, object} errors - detail of errors - return from express-validator middleware
  */
 
-module.exports = function error (res, errors, options = {}, statusCode = 200) {
+module.exports = function error (res, errors, options = {}, statusCode = 400) {
   const { error } = options
 
   const response = {
